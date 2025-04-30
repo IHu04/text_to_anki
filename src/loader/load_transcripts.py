@@ -1,7 +1,5 @@
-from dotenv import load_dotenv
-import os
+from langchain_community.document_loaders import TextLoader
 
-load_dotenv()
-
-gemini_api_key = os.getenv("GEMINI_API_KEY")
-
+def load_transcript(path="transcripts/lec1.txt"):
+    loader = TextLoader(path)
+    return loader.load()
